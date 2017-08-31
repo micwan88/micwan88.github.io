@@ -17,5 +17,4 @@ title: Unicode string in SELECT query for MS SQL 2005
 `SELECT * FROM table_A WHERE column_A = N'深水埗區'`
 
 詳細的說明可看這:
-
 [http://support.microsoft.com/kb/239530](http://support.microsoft.com/kb/239530)
