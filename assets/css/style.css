@@ -1,0 +1,10 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+img[alt="Build Status"] {
+	margin: 0;
+	padding: 0;
+	border: none;
+}
