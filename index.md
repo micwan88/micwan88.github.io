@@ -1,17 +1,16 @@
 ---
-title: Index
+title: Home
 ---
 
-## Testing page at index
+## Home
+Web notes home page
 
-This is a test at index
+### Public Repository
+Here are list of pulbic repositories.
+- [gatecoinapi4j]({{ site.url }}/gatecoinapi4j) - This is a java implementation of [Gatecoin](https://gatecoin.com) api [![Build Status](https://travis-ci.org/micwan88/gatecoinapi4j.svg?branch=master)](https://travis-ci.org/micwan88/gatecoinapi4j)
 
-### Test post List
+### Note Posts
+Here are list of note posts.
 {% for post in site.posts %}
-- [{{ post.title }}]({{ post.url }})
-{% endfor %}
-
-### Repository
-{% for repository in site.github.public_repositories %}
-  * [{{ repository.name }}]({{ repository.html_url }})
+- [{{ post.date }} - {{ post.title }}]({{ post.url }})
 {% endfor %}
