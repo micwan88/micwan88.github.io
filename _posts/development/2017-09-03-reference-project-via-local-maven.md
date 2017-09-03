@@ -5,16 +5,16 @@ categories: java gradle
 
 ## How to reference other project via local Maven repository in gradle
 
-To use other project as library via local Maven repository, you need to enable your library project for local Maven first. To do so, add `maven` plugin, `version` and `group` in `build.gradle`.
+To use other project as library via local Maven repository, you need to enable your library project for local Maven first. To do so, add `maven` plugin, `version` and `group` in `build.gradle`. Let's take gatecoinapi4j project as example
 
 
 ``` gradle
 apply plugin: 'java'
 apply plugin: 'maven'
 
-//Define your library version and group id, take gatecoinapi4j as example.
-//group id is 'mic.trade'
-version = '0.1.0-SNAPSHOT'
+//Define your library version and group id
+//For gatecoinapi4j, group id is 'mic.trade'
+version = '1.0.1-SNAPSHOT'
 group = 'mic.trade'
 ```
 
@@ -42,7 +42,7 @@ repositories {
 //Please modify the below version to match with the source of your library
 dependencies {
 	//Reference your local library project
-	compile group: 'mic.trade', name: 'gatecoinapi4j', version: '0.1.0-SNAPSHOT'
+	compile group: 'mic.trade', name: 'gatecoinapi4j', version: '1.0.1-SNAPSHOT'
 }
 ```
 
