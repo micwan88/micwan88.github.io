@@ -1,9 +1,9 @@
 ---
-title: How to convert IBM packed decimal / zoned decimal in java
+title: Convert IBM packed decimal / zoned decimal in java
 categories: java
 ---
 
-## How to convert IBM packed decimal / zoned decimal in java
+## Convert IBM packed decimal / zoned decimal in java
 
 There is a Java library called [IBM Toolbox for Java](https://www-03.ibm.com/systems/power/software/i/toolbox/downloads.html) or [JTOpen, a open source version](http://sourceforge.net/projects/jt400) can convert to/from IBM decimal format of packed decimal and zoned decimal in Java.
 
