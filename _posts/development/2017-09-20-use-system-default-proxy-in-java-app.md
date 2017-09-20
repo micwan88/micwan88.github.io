@@ -11,6 +11,7 @@ To enable Java app to use system default proxy (i.e. socks or http[s]), just add
 -Djava.net.useSystemProxies=true
 ```
 
+
 ## Specify proxy setting in Java app
 
 To specify the proxy setting rather than use the system's default, just set the corresponding JVM params as below:
@@ -26,6 +27,7 @@ To specify the proxy setting rather than use the system's default, just set the 
 -Dhttp.nonProxyHosts="some.internaldomain.com|www.internaldomain.com"
 ```
 
+
 - For HTTPS
 
 ```
@@ -36,6 +38,7 @@ To specify the proxy setting rather than use the system's default, just set the 
 #To exclude some domains for proxy (It is same as http)
 -Dhttp.nonProxyHosts="some.internaldomain.com|www.internaldomain.com"
 ```
+
 
 - For FTP
 
@@ -48,6 +51,7 @@ To specify the proxy setting rather than use the system's default, just set the 
 -Dftp.nonProxyHosts="some.internaldomain.com|www.internaldomain.com"
 ```
 
+
 - For Socks
 
 ```
@@ -56,6 +60,7 @@ To specify the proxy setting rather than use the system's default, just set the 
 #Set proxy port (default is 1080)
 -DsocksProxyPort=1080
 ```
+
 
 References:
 - [Java Networking and Proxies](https://docs.oracle.com/javase/8/docs/technotes/guides/net/proxies.html)
