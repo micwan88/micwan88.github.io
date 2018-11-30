@@ -13,6 +13,7 @@ We can extend `ClassLoader` class to implement a custom class loader so that we 
 
 Below is the sequence of how Java look up a class:
 
+
 ``` java
 CustomClassLoader.loadClass() -> Parent.loadClass() -> Parent.Parent.loadClass() -> ... -> 
 No more parent then BootstrapClassLoader load class -> Parent....Parent.findClass() -> ... ->
@@ -28,6 +29,7 @@ So if we want to implement a classloader to use bytes array, we should override 
 
 While we are calling `getResourceAsStream()` from any classloader, actually it will try look up the resources from its parent first and it just same as loading Java class. Below is the sequence of how Java look up a resource name.
 
+
 ``` java
 //Classloader retrieve the resource file as URL first, then calling URL.openStream()
 CustomClassLoader.getResourceAsStream() -> ((URL)CustomClassLoader.getResource()).openStream()
@@ -42,6 +44,62 @@ Parent.Parent.findResource() -> Parent.findResource() -> CustomClassLoader.findR
 If the resource file cannot be found by its parent, it will try load the resource file by `findResource()` itself. If it is failed again, return null directly.
 
 So if we want to implement a classloader to use bytes array for resource file, we should override the method of `findResource()` and it is enough.
+
+
+### For Java Class - override findClass() to use bytes array
+
+In `ClassLoader`, there is a method can load Java class from bytes array and we can use it under `findClass()`.
+Here is the example:
+
+
+``` java
+//Define Custom ClassLoader
+public class ByteClassLoader extends ClassLoader {
+	private HashMap<String, byte[]> byteDataMap = new HashMap<>();
+
+	public ByteClassLoader(ClassLoader parent) {
+		super(parent);
+	}
+
+	public void loadDataInBytes(byte[] byteData, String resourcesName) {
+		byteDataMap.put(resourcesName, byteData);
+	}
+
+	@Override
+	protected Class<?> findClass(String className) throws ClassNotFoundException {
+		if (byteDataMap.isEmpty())
+			throw new ClassNotFoundException("byte data is empty");
+		
+		String filePath = className.replaceAll("\\.", "/").concat(".class");
+		byte[] extractedBytes = byteDataMap.get(filePath);
+		if (extractedBytes == null)
+			throw new ClassNotFoundException("Cannot find " + filePath + " in bytes");
+		
+		return defineClass(className, extractedBytes, 0, extractedBytes.length);
+	}
+}
+
+//Example Usage
+public static void main(String[] args) throws IOException {
+	//prepare the bytes array
+	byte[] byteData = .....;
+
+	ByteClassLoader byteClassLoader = new ByteClassLoader(this.getClass().getClassLoader());
+	//Load bytes into hashmap
+	byteClassLoader.loadDataInBytes(byteData, "class.name.in.full.package");
+
+	Class<?> helloWorldClass = byteClassLoader.loadClass("class.name.in.full.package");
+}
+```
+
+
+By implementing the custom classloader as the above, you can load normal / other class from parent classloader as well (i.e. without lose its hierarchy loading feature).
+
+
+### For Resource File - override findResource() to use bytes array
+
+
+
 
 References:
 - [Class Loaders in Java](https://www.baeldung.com/java-classloaders)
