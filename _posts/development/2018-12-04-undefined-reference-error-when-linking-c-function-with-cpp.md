@@ -1,5 +1,5 @@
 ---
-title: 'Undefined Reference' error when linking c function in c++
+title: Undefined Reference error when linking c function in c++
 categories: c c++ linking
 ---
 
