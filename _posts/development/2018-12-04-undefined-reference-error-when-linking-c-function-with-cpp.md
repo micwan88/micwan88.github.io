@@ -1,9 +1,9 @@
 ---
-title: "Undefined Reference" error when linking c function in c++
+title: 'Undefined Reference' error when linking c function in c++
 categories: c c++ linking
 ---
 
-## "Undefined Reference" error when linking c function in c++
+## 'Undefined Reference' error when linking c function in c++
 
 Please noted that C and C++ are different languages. Their compiler will create different symbol names on object. So C++ linker cannot find the correct symbol which is compiled by C compiler.
 
