@@ -5,5 +5,7 @@ layout: default
 {{ content }}
 
 {% if site.comments %}
-  {% include disqus.html %}
+  <p>
+    {% include disqus.html %}
+  </p>
 {% endif %}
