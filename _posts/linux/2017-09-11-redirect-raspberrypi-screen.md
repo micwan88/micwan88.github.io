@@ -1,4 +1,5 @@
 ---
+layout: post
 title: How to redirect screen to PC from raspberry pi
 categories: linux raspberrypi
 ---
