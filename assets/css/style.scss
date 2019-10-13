@@ -20,8 +20,10 @@ th:nth-child(even) {
 }
 
 h2.post_title {
-	padding-bottom: inherit;
-	background: inherit;
+	padding-bottom: 0px;
+	background: none;
+	letter-spacing: 0px;
+	margin: 10px 0px 5px 0px;
 }
 
 div.post_title {
