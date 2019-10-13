@@ -2,8 +2,8 @@
 layout: default
 ---
 
+<div>Post Date: {{ page.date | default: site.time | date: "%Y-%m-%d" }}</div>
+
 {{ content }}
 
 {% include disqus.html %}
-
-<div>Updated: {{ page.date | default: site.time | date: "%Y-%m-%d %H:%M" }}</div>
