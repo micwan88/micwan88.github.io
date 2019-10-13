@@ -3,8 +3,6 @@ title: Load resource file by getResourceAsStream in static method of Java
 categories: java
 ---
 
-## Load resource file by getResourceAsStream in static method of Java
-
 There are three methods to load resource file in classpath and they have some differences between them.
 
 Below two methods will treat resources name as absolute path and without leading "/"

@@ -3,8 +3,6 @@ title: MSTSC.EXE – no more /console switch in RDC 6.1
 categories: windows
 ---
 
-## No more /console switch in RDC 6.1
-
 The `/console` switch for Microsoft remote desktop client `mstsc` has been changed to `/admin` since version 6.1.
 
 References:

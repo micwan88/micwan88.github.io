@@ -3,8 +3,6 @@ title: Load class or resource file from bytes in Java
 categories: java classloader
 ---
 
-## Load class or resource file from bytes array in Java
-
 We can extend `ClassLoader` class to implement a custom class loader so that we can load class / resource file from bytes array. Before that, we need to know the hierarchy architecture and its loading sequence of classloader. Otherwise, we do not know which method in `ClassLoader` should be overrided.
 
 ### ClassLoader hierarchy and loading sequence

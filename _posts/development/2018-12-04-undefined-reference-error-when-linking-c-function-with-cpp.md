@@ -3,8 +3,6 @@ title: Undefined Reference error when linking c function in c++
 categories: c c++ linking
 ---
 
-## 'Undefined Reference' error when linking c function in c++
-
 Please noted that C and C++ are different languages. Their compiler will create different symbol names on object. So C++ linker cannot find the correct symbol which is compiled by C compiler.
 
 If you want to link the C function in C++, you have to define the function with `extern "C"` block. Here is the example:

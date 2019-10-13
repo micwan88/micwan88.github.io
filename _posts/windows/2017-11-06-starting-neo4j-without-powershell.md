@@ -3,8 +3,6 @@ title: Starting Neo4j without Powershell
 categories: windows neo4j
 ---
 
-## Starting Neo4j without Powershell
-
 In fact, neo4j is Java based app and so we can start it by using java command as below:
 
 - Starting the console

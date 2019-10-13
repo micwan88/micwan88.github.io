@@ -3,8 +3,6 @@ title: Use system default proxy in Java app
 categories: java
 ---
 
-## Use system default proxy in Java app
-
 To enable Java app to use system default proxy (i.e. socks or http[s]), just add below JVM param during startup.
 
 ```
