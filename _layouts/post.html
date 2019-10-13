@@ -5,3 +5,5 @@ layout: default
 {{ content }}
 
 {% include disqus.html %}
+
+<div>Updated: {{ page.date | default: site.time | date: "%Y-%m-%d %H:%M" }}</div>
