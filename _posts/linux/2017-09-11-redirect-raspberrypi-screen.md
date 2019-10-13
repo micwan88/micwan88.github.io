@@ -3,8 +3,6 @@ title: How to redirect screen to PC from raspberry pi
 categories: linux raspberrypi
 ---
 
-## How to redirect screen to PC from raspberry pi
-
 This article is talking about raspbian in raspberry pi and there is lightdm (X Display Manager) in raspbian running by default.
 
 As X system is working over network in nature, so there are many ways to redirect raspberry pi screen and they are as below:

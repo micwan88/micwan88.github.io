@@ -4,11 +4,10 @@ layout: default
 
 <h2 class="post_title">
   {{ page.title }}
-  {% if page.date %}
-    <small>Post Date: {{ page.date | date_to_string }}</small>
-  {% endif %}
 </h2>
-<div>Post Date: {{ page.date | default: site.time | date: "%Y-%m-%d" }}</div>
+{% if page.date %}
+  <div class="post_title">Post Date: {{ page.date | default: site.time | date: "%Y-%m-%d" }}</div>
+{% endif %}
 
 {{ content }}
 

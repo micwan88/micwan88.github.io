@@ -18,3 +18,13 @@ th:nth-child(even) {
 	color: inherit;
 	text-shadow: inherit;
 }
+
+h2.post_title {
+	padding-bottom: inherit;
+	background: inherit;
+}
+
+div.post_title {
+	padding-bottom: 10px;
+	background: url(../images/bg_hr.png) repeat-x bottom;
+}
