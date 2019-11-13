@@ -17,7 +17,7 @@ Here I only talk the first two ways !
 
 ### Pre-requisite
 
-1. Enable lightdm to listen on TCP
+- Enable lightdm to listen on TCP
 
 lightdm is disable tcp connection by default for security reason, so we need to enable it by login as `pi` and changing the config of `/etc/lightdm/lightdm.conf`
 
@@ -40,7 +40,7 @@ To verify if lightdm enabled tcp, check the process whether there is a `nolisten
 ps -ef | grep lightdm | grep nolisten
 ```
 
-2. Ensure `xauth` is installed
+- Ensure `xauth` is installed
 
 Checking if `xauth` is installed by below command:
 
