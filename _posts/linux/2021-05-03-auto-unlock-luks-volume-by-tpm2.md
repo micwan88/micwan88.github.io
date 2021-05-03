@@ -156,15 +156,16 @@ Make a unlock luks disk script `/usr/local/bin/unlock-luks-from-tpm.sh` to call 
 
 ``` bash
 #!/bin/sh
-set -e
 
-echo "Unlock LUKS volume via TPM ..." >&2
+echo "Unlock LUKS volume via TPM - $CRYPTTAB_SOURCE ($CRYPTTAB_NAME) ..." >&2
 #Replace the persistent address if necessary (-Q: slient, only return unseal data)
 /usr/bin/tpm2_unseal -Q -c 0x81000000
 if [ $? -eq 0 ]; then
-        exit
+        exit 0
 fi
-/lib/cryptsetup/askpass "Unlock LUKS volume fallback $CRYPTTAB_SOURCE ($CRYPTTAB_NAME)\nEnter passphrase: "
+
+#If failed (no matter of tpm2_unseal error or key not match), then fallback to ask passphrase
+/lib/cryptsetup/askpass "Unlock LUKS volume fallback to passphrase - $CRYPTTAB_SOURCE ($CRYPTTAB_NAME)\nEnter passphrase: "
 ```
 
 Set the unlock script executable.
@@ -173,11 +174,11 @@ Set the unlock script executable.
 chmod a+x /usr/local/bin/unlock-luks-from-tpm.sh
 ```
 
-Update `/etc/crypttab` to use our unlock script for getting key.
+Update `/etc/crypttab` to use our unlock script for getting key. Please noted that `keyscript` option doesn't support by systemd and so we need to add another option `initramfs` to indicate that device should be unlocked during stage of 'initramfs' boot. Newer version of systemd got command `systemd-cryptenroll` to unlock the volume and its support to use TPM2 natively.
 
 ``` bash
-#Just add ",keyscript=/usr/local/bin/unlock-luks-from-tpm.sh" at the end
-dm_crypt-1 UUID=xxxx-xxxxx-xxxx-xxxx none luks,keyscript=/usr/local/bin/unlock-luks-from-tpm.sh
+#Adding "initramfs" and "keyscript" options for crypttab
+dm_crypt-1 UUID=xxxx-xxxxx-xxxx-xxxx none luks,initramfs,keyscript=/usr/local/bin/unlock-luks-from-tpm.sh
 ```
 
 Build the final 'initramfs' image and reboot to test
