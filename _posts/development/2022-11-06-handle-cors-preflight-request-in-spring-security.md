@@ -120,6 +120,7 @@ public class WebSecurityConfig {
 References:
 - [Cross-Origin Resource Sharing (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
 - [Spring Security - CORS Support](https://docs.spring.io/spring-security/reference/servlet/integrations/cors.html)
+- [Spring Rest Service CORS](https://spring.io/guides/gs/rest-service-cors/#global-cors-configuration)
 - [Spring CORS](https://www.baeldung.com/spring-cors)
 - [Spring security CORS preflight](https://www.baeldung.com/spring-security-cors-preflight)
 - [Disable same origin policy in Chrome](https://stackoverflow.com/questions/3102819/disable-same-origin-policy-in-chrome)
