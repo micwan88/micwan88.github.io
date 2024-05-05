@@ -5,11 +5,15 @@ categories: java springboot
 
 - JVM Argument (non-springboot:run)
 
-For Java program which is not calling via `spring-boot:run`, you can add JVM argument `-Djavax.net.debug=ssl:handshake:keymanager:trustmanager` to enable the SSL debug.
+For Java program which is not calling via `spring-boot:run`, 
+you can add JVM argument `-Djavax.net.debug=ssl:handshake:keymanager:trustmanager` to enable the SSL debug.
+
 
 - For spring-boot:run program
 
-For spring-boot:run program, you can add argument `-Dspring-boot.run.jvmArguments="-Djavax.net.debug=ssl:handshake:keymanager:trustmanager"` to enable the SSL debug or you can declare it inside code as below.
+For spring-boot:run program, 
+you can add argument `-Dspring-boot.run.jvmArguments="-Djavax.net.debug=ssl:handshake:keymanager:trustmanager"` to enable the SSL debug or you can declare it inside code as below.
+
 
 ``` java
 

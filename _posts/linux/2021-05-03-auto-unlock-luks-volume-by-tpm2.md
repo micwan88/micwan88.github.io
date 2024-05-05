@@ -43,7 +43,7 @@ Supposed that we already have primary passphrase / key to unlock the disk volume
 tpm2_getrandom -V -o random1.bin 32
 tpm2_getrandom -V -o random2.bin 32
 
-#Combin two 32 bytes files to form a 54 bytes file
+#Combin two 32 bytes files to form a 64 bytes file
 cat random1.bin random2.bin > random.bin
 
 #Can remove the temp file after generated
