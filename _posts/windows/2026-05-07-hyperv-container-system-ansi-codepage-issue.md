@@ -52,3 +52,4 @@ docker run -it --rm --isolation=hyperv mcr.microsoft.com/windows/servercore:ltsc
 
 References:
 - [ANSI Code Page in Hyper-V Windows containers should not be 65001](https://github.com/microsoft/Windows-Containers/issues/579)
+- [Windows 10 Pro - Docker Container System Locale](https://stackoverflow.com/questions/61769729/windows-10-pro-docker-container-system-locale)
